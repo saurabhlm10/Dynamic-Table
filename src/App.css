@@ -14,7 +14,7 @@ table, td, th{
   border-collapse: collapse;
 }
 
-th>img{
+th img{
   cursor: pointer;
   vertical-align: middle;
 }

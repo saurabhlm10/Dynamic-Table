@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import Profile from '../image/profile.png'
 import Arrows from '../image/ArrowsDownUp.png'
+import "../App.css";
 
-const TableComponent = ({ data, tableConfig }) => {
+
+const TableComponent = ({ data }) => {
   const [nameSorted, setNameSorted] = useState(false)
   const [citySorted, setCitySorted] = useState(false)
   const [emailSorted, setEmailSorted] = useState(false)
@@ -46,34 +48,34 @@ const TableComponent = ({ data, tableConfig }) => {
     <table cellSpacing={0}>
       <tbody>
         <tr>
-          <th style={{ display: `${tableConfig.name}` }}>
+          <th >
             <div>
               Name
-              <img style={{ display: `${tableConfig.nameSort}` }} src={Arrows} alt="" onClick={() => { tableSort('name') }} />
+              <img src={Arrows} alt="" onClick={() => { tableSort('name') }} />
             </div>
           </th>
-          <th style={{ display: `${tableConfig.city}` }}>
+          <th>
             <div>
               City
-              <img style={{ display: `${tableConfig.citySort}` }} src={Arrows} alt="" onClick={() => { tableSort('city') }} />
+              <img src={Arrows} alt="" onClick={() => { tableSort('city') }} />
             </div>
           </th>
-          <th style={{ display: `${tableConfig.email}` }}>
+          <th>
             <div>
               Email Address
-              <img style={{ display: `${tableConfig.emailSort}` }} src={Arrows} alt="" onClick={() => { tableSort('email') }} />
+              <img src={Arrows} alt="" onClick={() => { tableSort('email') }} />
             </div>
           </th>
-          <th style={{ display: `${tableConfig.joiningDate}` }}>
+          <th>
             <div>
               Joining Date
-              <img style={{ display: `${tableConfig.joiningDateSort}` }} src={Arrows} alt="" onClick={() => { tableSort('joiningDate') }} />
+              <img src={Arrows} alt="" onClick={() => { tableSort('joiningDate') }} />
             </div>
           </th>
-          <th style={{ display: `${tableConfig.role}` }}>
+          <th>
             <div>
               Role
-              <img style={{ display: `${tableConfig.roleSort}` }} src={Arrows} alt="" onClick={() => { tableSort('role') }} />
+              <img src={Arrows} alt="" onClick={() => { tableSort('role') }} />
             </div>
           </th>
         </tr>
@@ -81,20 +83,20 @@ const TableComponent = ({ data, tableConfig }) => {
           <tr key={id} style={{
             backgroundColor: `${id % 2 === 0 ? '#ffffff' : '#F5F5F5'}`
           }}>
-            <td style={{ display: `${tableConfig.name}` }} className='name'>
+            <td>
               <div>
                 <img src={Profile} alt="profile" />
                 {data?.person?.name}
               </div>
             </td>
-            <td style={{ display: `${tableConfig.city}` }} className='city'>{data.city}</td>
-            <td style={{ display: `${tableConfig.email}` }} className='email'>
+            <td>{data.city}</td>
+            <td>
               <a href="https://www.google.com" target='_blank' rel="noreferrer" >
                 {data.email}
               </a>
             </td>
-            <td style={{ display: `${tableConfig.joiningDate}` }} className='joiningDate'>{data.joiningDate}</td>
-            <td style={{ display: `${tableConfig.role}` }} className='role'>{data.role}</td>
+            <td>{data.joiningDate}</td>
+            <td>{data.role}</td>
           </tr>
         ))}
       </tbody>
